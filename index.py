@@ -23,11 +23,6 @@ elif operation == '/':
         print("Error: Division by zero is not allowed.")
 else:
     print("Invalid operation. Please enter one of +, -, *, or /.")
-# Simple Calculator Program
 
-# Ask the user for input
-num1 = float(input("Enter the first number: "))
-num2 = float(input("Enter the second number: "))
-operation = input("Enter an operation (+, -, *, /): ")
 
 
