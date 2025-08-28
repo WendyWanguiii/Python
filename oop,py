@@ -1,0 +1,73 @@
+//Activity 1
+// Base class
+class Device {
+  constructor(brand, model) {
+    this.brand = brand;
+    this.model = model;
+  }
+
+  info() {
+    return `${this.brand} ${this.model}`;
+  }
+}
+
+// Derived class with extra attributes and methods
+class Smartphone extends Device {
+  constructor(brand, model, os, cameraMP) {
+    super(brand, model);
+    this.os = os;
+    this.cameraMP = cameraMP;
+  }
+
+  takePhoto() {
+    return `Taking a photo with ${this.cameraMP}MP camera`;
+  }
+
+  info() {
+    // Override base method to add more info (polymorphism)
+    return `${super.info()} running ${this.os}`;
+  }
+}
+
+// Another derived class
+class SmartWatch extends Device {
+  constructor(brand, model, hasGPS) {
+    super(brand, model);
+    this.hasGPS = hasGPS;
+  }
+
+  trackActivity() {
+    return this.hasGPS ? "Tracking your run with GPS" : "Tracking your run";
+  }
+}
+
+
+// Activity 2
+class Vehicle {
+  move() {
+    console.log("Moving...");
+  }
+}
+
+class Car extends Vehicle {
+  move() {
+    console.log("Driving 🚗");
+  }
+}
+
+class Plane extends Vehicle {
+  move() {
+    console.log("Flying ✈️");
+  }
+}
+
+class Boat extends Vehicle {
+  move() {
+    console.log("Sailing ⛵");
+  }
+}
+
+// Test polymorphism
+const vehicles = [new Car(), new Plane(), new Boat()];
+
+vehicles.forEach(vehicle => vehicle.move());
